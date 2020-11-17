@@ -43,6 +43,7 @@ const carregaCotacoes = async () => {
     let resposta = await fetch("https://api.exchangeratesapi.io/latest")
     let dado = await resposta.json()
     console.log(dado) 
+    mostraCotacao(cotacoes.rates)
 }                                
 
 const carregaCotacoesThen = () => {
@@ -72,7 +73,3 @@ function mostraCotacao (rates) {
     document.getElementById("outrasCotacoes").innerHTML = conteudo
 
 }
-
-// Forçar rodar ao abrir a pagina 
-// mostraCotacao(cotacoes.rates)
-// test

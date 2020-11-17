@@ -75,3 +75,4 @@ function mostraCotacao (rates) {
 
 // Forçar rodar ao abrir a pagina 
 // mostraCotacao(cotacoes.rates)
+// test

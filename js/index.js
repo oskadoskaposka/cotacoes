@@ -53,15 +53,25 @@ const carregaCotacoesThen = () => {
     .then((objeto)=>{console.log(objeto)})
 }
 
-function mostraCotacao (cotacao) {
-    let moeda = Object.keys(cotacao)[0]
-    let valor = Object.values(cotacao)[0]
+function mostraCotacao (rates) {
 
-    let article = document.createElement('article')
-    article.innerHTML = `
-        <h2>${moeda}</h2>
-        <span>${valor}</span>
+    let moedas = Object.keys(rates)
+    let valores = Object.values(rates)
+
+    let conteudo = ""
+    for (let i = 0; i < moedas.length; i++) {
+        conteudo += `
+            <article>
+                <h2>${moedas[i]}</h2>
+                <span>${valores[i]}</span>
+            </article>
         `
-    return article
+    
+    }
+
+    document.getElementById("outrasCotacoes").innerHTML = conteudo
 
 }
+
+// Forçar rodar ao abrir a pagina 
+// mostraCotacao(cotacoes.rates)
